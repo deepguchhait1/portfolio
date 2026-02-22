@@ -1,34 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark;
 }
 
-:root {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: dark;
-  color: #e4e4e7;
-  background-color: #0a0a0f;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-#root {
-  width: 100%;
+/* Pulse glow for hero accent */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6), 0 0 80px rgba(99, 102, 241, 0.2); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Typewriter blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }
