@@ -20,14 +20,6 @@ const PROJECTS = [
   link: 'https://frontend-chat-app-sigma.vercel.app/',
   github: 'https://github.com/deepguchhait1/Batchit.git',
 },
-  {
-    title: 'TaskFlow',
-    subtitle: 'Project Manager',
-    desc: 'Kanban-style task management app with drag-and-drop, team collaboration, and role-based access control.',
-    tags: ['Next.js', 'MongoDB', 'Express', 'Tailwind', 'DnD Kit'],
-    link: '#',
-    github: '#',
-  },
  {
   title: 'Secure Voting System API',
   subtitle: 'Robust Backend for Digital Democracy',
