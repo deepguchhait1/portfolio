@@ -37,6 +37,22 @@ const PROJECTS = [
   github: 'https://github.com/deepguchhait1/Game.git',
 },
   {
+  title: 'Sono',
+  subtitle: 'Japanese Culinary Excellence',
+  desc: 'A sophisticated multi-page frontend experience for a premium Japanese restaurant. Built with Tailwind CSS for modern utility-first styling and AOS for elegant scroll animations that enhance the user journey.',
+  tags: ['Tailwind CSS', 'AOS (Animate On Scroll)', 'JavaScript', 'HTML5', 'Responsive Design'],
+  link: 'https://deepguchhait1.github.io/restaurant/',
+  github: 'https://github.com/deepguchhait1/restaurant.git',
+},
+  {
+  title: 'JS Calculator',
+  subtitle: 'Logic-Based Arithmetic Engine',
+  desc: 'A functional web calculator built with vanilla JavaScript. Focuses on precise state management, handling operator precedence, and preventing input errors (like double decimals) through robust conditional logic.',
+  tags: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'DOM Manipulation', 'Event Handling'],
+  link: 'https://deepguchhait1.github.io/calculator/',
+  github: 'https://github.com/deepguchhait1/calculator.git',
+},
+  {
   title: 'Morden Resturent',
   subtitle: 'Premium Culinary Digital Experience',
   desc: 'A visually stunning, fully responsive landing page for a modern restaurant. Features high-quality image integration, smooth scrolling, and an elegant menu layout designed to convert visitors into diners.',
