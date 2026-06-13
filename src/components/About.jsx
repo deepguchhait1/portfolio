@@ -1,20 +1,5 @@
 import { forwardRef } from 'react'
-import { FaGraduationCap, FaLaptopCode, FaRocket, FaHeart } from 'react-icons/fa'
-import { HiLightningBolt, HiCode, HiGlobe, HiSparkles } from 'react-icons/hi'
-
-const HIGHLIGHTS = [
-  { icon: <HiLightningBolt size={22} />, title: 'Fast Learner', desc: 'Quick to pick up new frameworks and tools' },
-  { icon: <HiCode size={22} />, title: 'Clean Code', desc: 'Writing maintainable, well-documented code' },
-  { icon: <HiGlobe size={22} />, title: 'Full Stack', desc: 'End-to-end from UI to database to deployment' },
-  { icon: <HiSparkles size={22} />, title: 'Detail Oriented', desc: 'Pixel-perfect UI with great UX patterns' },
-]
-
-const JOURNEY = [
-  { icon: <FaGraduationCap />, year: '2023', text: 'Started learning web development' },
-  { icon: <FaLaptopCode />, year: '2024', text: 'Built first full-stack MERN project' },
-  { icon: <FaRocket />, year: '2025', text: 'Freelancing & open source contributions' },
-  { icon: <FaHeart />, year: 'Now', text: 'Building products & seeking new opportunities' },
-]
+import { HIGHLIGHTS, JOURNEY } from '../assets/mydata'
 
 const About = forwardRef((_, ref) => {
   return (
@@ -35,27 +20,30 @@ const About = forwardRef((_, ref) => {
             <div className="space-y-5 text-base-content/60 text-[1.05rem] leading-relaxed">
               <p>
                 I'm a passionate <span className="text-base-content font-semibold">MERN Stack Developer</span> who
-                turns ideas into polished, full-stack web applications. My journey started with curiosity about how 
+                turns ideas into polished, full-stack web applications. My journey started with curiosity about how
                 websites work and evolved into a deep love for building software.
               </p>
               <p>
-                I specialize in crafting responsive React interfaces, designing RESTful APIs with Express & Node.js, 
-                and modeling data with MongoDB. I care deeply about <span className="text-primary">performance</span>, 
+                I specialize in crafting responsive React interfaces, designing RESTful APIs with Express & Node.js,
+                and modeling data with MongoDB. I care deeply about <span className="text-primary">performance</span>,
                 <span className="text-primary"> accessibility</span>, and <span className="text-primary">developer experience</span>.
               </p>
             </div>
 
             {/* Highlight cards */}
             <div className="grid sm:grid-cols-2 gap-3 pt-4">
-              {HIGHLIGHTS.map((h) => (
+              {HIGHLIGHTS.map((h) => {
+                const Icon = h.icon
+                return (
                 <div key={h.title} className="flex gap-4 p-4 rounded-xl bg-base-200/30 border border-base-content/5 hover:border-primary/20 transition-all duration-300 group">
-                  <div className="text-primary/70 group-hover:text-primary transition-colors mt-0.5">{h.icon}</div>
+                  <div className="text-primary/70 group-hover:text-primary transition-colors mt-0.5"><Icon size={22} /></div>
                   <div>
                     <h4 className="text-sm font-bold mb-0.5">{h.title}</h4>
                     <p className="text-xs text-base-content/40">{h.desc}</p>
                   </div>
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
@@ -64,7 +52,9 @@ const About = forwardRef((_, ref) => {
             <div className="bg-base-200/30 border border-base-content/5 rounded-2xl p-6">
               <h3 className="text-sm font-bold text-base-content/40 uppercase tracking-widest mb-6">My Journey</h3>
               <div className="space-y-0">
-                {JOURNEY.map((item, i) => (
+                {JOURNEY.map((item, i) => {
+                  const Icon = item.icon
+                  return (
                   <div key={i} className="flex gap-4 relative">
                     {/* Timeline line */}
                     {i < JOURNEY.length - 1 && (
@@ -72,14 +62,15 @@ const About = forwardRef((_, ref) => {
                     )}
                     {/* Dot */}
                     <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-sm shrink-0 z-10">
-                      {item.icon}
+                      <Icon />
                     </div>
                     <div className="pb-8">
                       <span className="text-xs font-mono text-primary/70">{item.year}</span>
                       <p className="text-sm text-base-content/60 mt-0.5">{item.text}</p>
                     </div>
                   </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

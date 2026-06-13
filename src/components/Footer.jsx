@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom'
-import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { HiHeart } from 'react-icons/hi'
-
-const LINKS = [
-  { icon: <FaGithub size={16} />, href: 'https://github.com/deepguchhait1' },
-  { icon: <FaLinkedin size={16} />, href: 'https://www.linkedin.com/in/deepguchhait' },
-  { icon: <FaXTwitter size={16} />, href: 'https://x.com/DGuchhait64942' },
-]
+import { LINKS } from '../assets/mydata'
 
 export default function Footer() {
   return (
@@ -21,7 +15,9 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-3">
-          {LINKS.map((l, i) => (
+          {LINKS.map((l, i) => {
+            const Icon = l.icon
+            return (
             <Link
               key={i}
               to={l.href}
@@ -29,9 +25,10 @@ export default function Footer() {
               rel="noreferrer"
               className="text-base-content/20 hover:text-base-content/50 transition-colors"
             >
-              {l.icon}
+              <Icon size={16} />
             </Link>
-          ))}
+            )
+          })}
         </div>
       </div>
     </footer>

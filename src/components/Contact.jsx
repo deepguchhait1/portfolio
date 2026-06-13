@@ -1,13 +1,7 @@
 import { forwardRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { HiMail, HiArrowRight } from 'react-icons/hi'
-
-const SOCIALS = [
-  { icon: <FaGithub size={20} />, href: 'https://github.com/deepguchhait1', label: 'GitHub' },
-  { icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/in/deepguchhait', label: 'LinkedIn' },
-  { icon: <FaXTwitter size={20} />, href: 'https://x.com/DGuchhait64942', label: 'X' },
-]
+import { SOCIALS } from '../assets/mydata'
 
 const Contact = forwardRef((_, ref) => {
   return (
@@ -57,7 +51,9 @@ const Contact = forwardRef((_, ref) => {
 
               {/* Socials */}
               <div className="flex justify-center gap-3 mt-10">
-                {SOCIALS.map((social) => (
+                {SOCIALS.map((social) => {
+                  const Icon = social.icon
+                  return (
                   <Link
                     key={social.label}
                     to={social.href}
@@ -66,9 +62,10 @@ const Contact = forwardRef((_, ref) => {
                     className="w-11 h-11 rounded-xl bg-base-content/5 border border-base-content/5 hover:border-primary/20 flex items-center justify-center text-base-content/30 hover:text-primary transition-all duration-300"
                     aria-label={social.label}
                   >
-                    {social.icon}
+                    <Icon size={20} />
                   </Link>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

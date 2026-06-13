@@ -1,15 +1,8 @@
 import { forwardRef } from 'react'
-import { FaReact, FaNodeJs, FaArrowDown, FaDownload } from 'react-icons/fa'
-import { SiMongodb, SiExpress } from 'react-icons/si'
-import { HiChevronDown } from 'react-icons/hi'
 import resumePdf from '../assets/Deep Guchhait_resume.pdf'
-
-const MERN_STACK = [
-  { icon: <SiMongodb size={28} />, name: 'MongoDB', color: '#47A248' },
-  { icon: <SiExpress size={28} />, name: 'Express.js', color: '#888' },
-  { icon: <FaReact size={28} />, name: 'React.js', color: '#61DAFB' },
-  { icon: <FaNodeJs size={28} />, name: 'Node.js', color: '#339933' },
-]
+import { FaArrowDown, FaDownload } from 'react-icons/fa'
+import { HiChevronDown } from 'react-icons/hi'
+import { MERN_STACK } from '../assets/mydata'
 
 const Hero = forwardRef(({ scrollTo }, ref) => {
   return (
@@ -47,15 +40,18 @@ const Hero = forwardRef(({ scrollTo }, ref) => {
 
             {/* MERN chips */}
             <div className="flex flex-wrap gap-3">
-              {MERN_STACK.map((tech) => (
+              {MERN_STACK.map((tech) => {
+                const Icon = tech.icon
+                return (
                 <div
                   key={tech.name}
                   className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-base-200/50 border border-base-content/5 hover:border-primary/30 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <span style={{ color: tech.color }}>{tech.icon}</span>
+                  <span style={{ color: tech.color }}><Icon size={28} /></span>
                   <span className="text-sm font-medium text-base-content/70">{tech.name}</span>
                 </div>
-              ))}
+                )
+              })}
             </div>
 
             {/* CTA */}

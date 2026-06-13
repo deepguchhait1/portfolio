@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { HiCode } from 'react-icons/hi'
 import resumePdf from '../assets/Deep Guchhait_resume.pdf'
-
-const NAV_LINKS = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+import { NAV_LINKS } from '../assets/mydata'
 
 export default function Navbar({ activeSection, scrolled, menuOpen, setMenuOpen, scrollTo }) {
+  const padLen = String(NAV_LINKS.length).length
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'bg-base-100/80 backdrop-blur-2xl border-b border-base-content/5' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
@@ -30,7 +30,7 @@ export default function Navbar({ activeSection, scrolled, menuOpen, setMenuOpen,
                   : 'text-base-content/40 hover:text-base-content/70'
               }`}
             >
-              <span className="text-primary/50 mr-1">0{i + 1}.</span>
+              <span className="text-primary/50 mr-1">{String(i + 1).padStart(padLen, '0')}.</span>
               {link}
               {activeSection === link && (
                 <span className="absolute -bottom-1 left-0 w-full h-px bg-primary" />
@@ -75,7 +75,7 @@ export default function Navbar({ activeSection, scrolled, menuOpen, setMenuOpen,
                   : 'text-base-content/40 hover:text-base-content/60 hover:bg-base-content/5'
               }`}
             >
-              <span className="text-primary/40 text-xs">0{i + 1}</span>
+              <span className="text-primary/40 text-xs">{String(i + 1).padStart(padLen, '0')}</span>
               {link}
             </Link>
           ))}
