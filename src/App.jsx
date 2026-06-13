@@ -3,12 +3,12 @@ import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Expreences from './components/Expreences'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-
-const NAV_LINKS = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+import { NAV_LINKS } from './assets/mydata'
 
 export default function App() {
   const [loading, setLoading] = useState(true)
@@ -52,6 +52,7 @@ export default function App() {
       />
       <Hero ref={(el) => (sectionsRef.current['Home'] = el)} scrollTo={scrollTo} />
       <About ref={(el) => (sectionsRef.current['About'] = el)} />
+      <Expreences ref={(el) => (sectionsRef.current['Experience'] = el)} />
       <Skills ref={(el) => (sectionsRef.current['Skills'] = el)} />
       <Projects ref={(el) => (sectionsRef.current['Projects'] = el)} />
       <Contact ref={(el) => (sectionsRef.current['Contact'] = el)} />

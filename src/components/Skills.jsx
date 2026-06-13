@@ -1,31 +1,5 @@
 import { forwardRef } from 'react'
-import {
-  FaReact, FaNodeJs, FaGitAlt, FaJava, FaPython,
-  FaHtml5, FaCss3Alt, FaBootstrap,
-} from 'react-icons/fa'
-import {
-  SiMongodb, SiExpress, SiJavascript, SiTailwindcss,
-  SiPostman, SiC,
-} from 'react-icons/si'
-import { HiDatabase } from 'react-icons/hi'
-
-const SKILLS = [
-  { name: 'C Language', icon: <SiC size={40} /> },
-  { name: 'Java', icon: <FaJava size={40} /> },
-  { name: 'Python', icon: <FaPython size={40} /> },
-  { name: 'JavaScript', icon: <SiJavascript size={40} /> },
-  { name: 'React.js', icon: <FaReact size={40} /> },
-  { name: 'HTML', icon: <FaHtml5 size={40} /> },
-  { name: 'CSS', icon: <FaCss3Alt size={40} /> },
-  { name: 'Tailwind', icon: <SiTailwindcss size={40} /> },
-  { name: 'Bootstrap', icon: <FaBootstrap size={40} /> },
-  { name: 'Node.js', icon: <FaNodeJs size={40} /> },
-  { name: 'Express.js', icon: <SiExpress size={40} /> },
-  { name: 'MongoDB', icon: <SiMongodb size={40} /> },
-  { name: 'SQL', icon: <HiDatabase size={40} /> },
-  { name: 'Git', icon: <FaGitAlt size={40} /> },
-  { name: 'Postman', icon: <SiPostman size={40} /> },
-]
+import { SKILLS } from '../assets/mydata'
 
 const Skills = forwardRef((_, ref) => {
   return (
@@ -41,19 +15,22 @@ const Skills = forwardRef((_, ref) => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {SKILLS.map((skill) => (
+          {SKILLS.map((skill) => {
+            const Icon = skill.icon
+            return (
             <div
               key={skill.name}
               className="flex flex-col items-center justify-center gap-4 p-6 rounded-2xl bg-base-200/40 border border-base-content/8 hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 cursor-default group"
             >
               <span className="text-base-content/70 group-hover:text-primary transition-colors duration-300">
-                {skill.icon}
+                <Icon size={40} />
               </span>
               <span className="text-sm font-semibold text-base-content/60 group-hover:text-base-content/90 transition-colors duration-300">
                 {skill.name}
               </span>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

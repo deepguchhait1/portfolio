@@ -2,75 +2,7 @@ import { forwardRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { HiArrowRight, HiChevronDown, HiChevronUp } from 'react-icons/hi'
-
-const PROJECTS = [
-  {
-  title: 'Tripzo',
-  subtitle: 'Full-Stack Travel Booking Platform',
-  desc: 'A comprehensive travel booking solution featuring secure user authentication, property listings, and an integrated payment gateway. Includes a dedicated admin dashboard for managing bookings, users, and destinations.',
-  tags: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT', 'Tailwind CSS'],
-  link: 'https://tripzo-frontend.vercel.app/',
-  github: 'https://github.com/deepguchhait1/TripzoFrontend.git',
-},
-  {
-  title: 'BatChit',
-  subtitle: 'Multilingual Language Learning & Networking',
-  desc: 'A real-time communication platform designed for language learners, featuring multi-language support and peer-to-peer video conferencing to facilitate immersive practice.',
-  tags: ['Socket.io', 'React', 'Node.js', 'Express', 'Tailwind CSS'],
-  link: 'https://frontend-chat-app-sigma.vercel.app/',
-  github: 'https://github.com/deepguchhait1/Batchit.git',
-},
- {
-  title: 'Secure Voting System API',
-  subtitle: 'Robust Backend for Digital Democracy',
-  desc: 'A high-integrity RESTful API designed to manage secure voting processes. It features role-based access control (RBAC), preventing duplicate voting and ensuring data consistency across candidates and voters.',
-  tags: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt', 'REST API'],
-  link: null, // Since it's API only, we leave this or link to documentation
-  github: 'https://github.com/deepguchhait1/Voting-System----API.git',
-},
-  {
-  title: 'RPS: The Classic Challenge',
-  subtitle: 'Interactive Rock Paper Scissors Game',
-  desc: 'A sleek, fully responsive web-based game featuring real-time score tracking, smooth CSS animations, and a randomized computer logic engine.',
-  tags: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'DOM Manipulation', 'UI/UX'],
-  link: 'https://deepguchhait1.github.io/Game/',
-  github: 'https://github.com/deepguchhait1/Game.git',
-},
-  {
-  title: 'Sono',
-  subtitle: 'Japanese Culinary Excellence',
-  desc: 'A sophisticated multi-page frontend experience for a premium Japanese restaurant. Built with Tailwind CSS for modern utility-first styling and AOS for elegant scroll animations that enhance the user journey.',
-  tags: ['Tailwind CSS', 'AOS (Animate On Scroll)', 'JavaScript', 'HTML5', 'Responsive Design'],
-  link: 'https://deepguchhait1.github.io/restaurant/',
-  github: 'https://github.com/deepguchhait1/restaurant.git',
-},
-  {
-  title: 'JS Calculator',
-  subtitle: 'Logic-Based Arithmetic Engine',
-  desc: 'A functional web calculator built with vanilla JavaScript. Focuses on precise state management, handling operator precedence, and preventing input errors (like double decimals) through robust conditional logic.',
-  tags: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'DOM Manipulation', 'Event Handling'],
-  link: 'https://deepguchhait1.github.io/calculator/',
-  github: 'https://github.com/deepguchhait1/calculator.git',
-},
-  {
-  title: 'Morden Resturent',
-  subtitle: 'Premium Culinary Digital Experience',
-  desc: 'A visually stunning, fully responsive landing page for a modern restaurant. Features high-quality image integration, smooth scrolling, and an elegant menu layout designed to convert visitors into diners.',
-  tags: ['HTML5', 'CSS3', 'Flexbox', 'CSS Grid', 'Responsive Design', 'UI/UX'],
-  link: 'https://deepguchhait1.github.io/Morden-Resturent/',
-  github: 'https://github.com/deepguchhait1/Morden-Resturent.git',
-},
-  {
-  title: 'Amazon UI Clone',
-  subtitle: 'High-Fidelity E-commerce Interface',
-  desc: 'A pixel-perfect recreation of the Amazon homepage, focusing on complex navigation systems, multi-layered layouts, and a responsive product grid using pure HTML and CSS.',
-  tags: ['HTML5', 'CSS3', 'Flexbox', 'CSS Grid', 'Iconography', 'Responsive Design'],
-  link: 'https://deepguchhait1.github.io/amazon/',
-  github: 'https://github.com/deepguchhait1/amazon.git',
-},
-]
-
-const INITIAL_COUNT = 4
+import { PROJECTS, INITIAL_COUNT } from '../assets/mydata'
 
 const Projects = forwardRef((_, ref) => {
   const [showAll, setShowAll] = useState(false)
