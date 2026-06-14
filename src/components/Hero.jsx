@@ -34,7 +34,7 @@ const Hero = forwardRef(({ scrollTo }, ref) => {
               </h1>
               <p className="text-lg text-base-content/50 leading-relaxed max-w-md">
                 Hi, I'm <span className="text-base-content font-semibold">Deep Guchhait</span> — a MERN stack developer 
-                crafting performant, scalable full-stack applications from Mumbai, India.
+                crafting performant, scalable full-stack applications from Kolkata, India.
               </p>
             </div>
 
